@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+from pprint import pprint
 import time
 from pathlib import Path
 
@@ -189,6 +190,8 @@ class TtbarAnalysis(dict):
         if ARGS.scheduling_mode == "imt":
             d = RDataFrame("events", input_data)
         else:
+            print(f"\n\n\nCreating RDataFrame for {process=} and {variation=}.\n\n\n")
+            pprint(input_data)
             d = RDataFrame("events", input_data, daskclient=self.connection, npartitions=ARGS.npartitions)
             d._headnode.backend.distribute_unique_paths(["helper.cpp", ])
 

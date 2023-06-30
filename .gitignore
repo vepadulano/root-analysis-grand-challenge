@@ -1,10 +1,11 @@
-*.root
 *.pdf
 *.npz
 *.png
 *.pcm
 *.d
 *.so
+*.out
+analyses/cms-open-data-ttbar/cachedir
 data.json
 __pycache__
 tags
